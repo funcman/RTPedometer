@@ -16,6 +16,9 @@
         double amplitude = [[self.amplitudes objectAtIndex:i]doubleValue];
         points[i].x = i*2;
         points[i].y = -amplitude*50 + self.frame.size.height;
+        if (points[i].y < 0) {
+            points[i].y = 0;
+        }
     }
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 0.5);
